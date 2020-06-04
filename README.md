@@ -18,7 +18,7 @@ pip install matplotlib
 
 If you are using the [Anaconda distribution](https://www.anaconda.com/), you should only need `PyWavelets`, which can be installed in the current environment using the following command in the Anaconda prompt:
 
-`conda install -c conda-forge pywavelets`
+```conda install -c conda-forge pywavelets```
 
 ## Sample code
 
