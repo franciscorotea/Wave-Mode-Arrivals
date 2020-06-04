@@ -8,7 +8,7 @@ The code is tested with Python 3.7. Next section provides the prerequisites to r
 
 ### Prerequisites
 
-The code is dependant on the following external libraries: Numpy, PyWavelets and Matplotlib. These can be installed with Python's inbuilt package management system, [pip](https://pip.pypa.io/en/stable/). Pip can install, update, or delete any official package. The installation can be made as:
+The code is dependant on the following external libraries: Numpy, PyWavelets and Matplotlib. These can be installed with Python's inbuilt package management system, [pip](https://pip.pypa.io/en/stable/). See Python's tutorial on [installing packages](https://packaging.python.org/tutorials/installing-packages/#id17) for information about this issue. In short, the installation can be made as:
 
 ```
 pip install numpy
@@ -16,9 +16,13 @@ pip install PyWavelets
 pip install matplotlib
 ```
 
+If you are using the [Anaconda distribution](https://www.anaconda.com/), you should only need `PyWavelets`, which can be installed in the current environment using the following command in the Anaconda prompt:
+
+`conda install -c conda-forge pywavelets`
+
 ## Sample code
 
-Run *exampleCode.py* for a sample code of the program. This code uses the test signal *exampleData.txt*, an Acoustic Emission waveform from a pencil lead break test (normalized Hsu-Nielsen source) on a 30 x 30 x 0.1 cm CFRP plate recorded at a 5 MHz sample rate. The pencil lead was broken at the center of the plate, and the signal was acquired at a 10 cm distance. Note that the signal file does not have any header; if this was the case, you should look into the [skiprows](https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.loadtxt.html) parameter of the numpy.loadtxt function.
+Run `exampleCode.py` for a sample code of the program. This code uses the test signal `exampleData.txt`, an Acoustic Emission waveform from a pencil lead break test (normalized Hsu-Nielsen source) on a 30 x 30 x 0.1 cm CFRP plate recorded at a 5 MHz sample rate. The pencil lead was broken at the center of the plate, and the signal was acquired at a 10 cm distance. Note that the signal file does not have any header; if this was the case, you should look into the [skiprows](https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.loadtxt.html) parameter of the `numpy.loadtxt` function.
 
 ### Selection of scale values
 
@@ -28,7 +32,7 @@ The scale values for the wavelet transform should be chosen such that the entire
 scale = fc*fs/fa
 ```
 
-where *fc* is the center frequency of the Morlet wavelet, *fs* is the sample frequency, and *fa* is the array of frequencies to convert.
+where `fc` is the center frequency of the Morlet wavelet, `fs` is the sample frequency, and `fa` is the array of frequencies to convert.
 Then, the wavelet transform is computed, obtaining 13 sets of coefficients (one for each scale specified), each set containing the same number of samples as the original time signal. Each set of coefficients can therefore be thought to represent the portion of the signal that is centered around the frequency corresponding to the specified scale value (*wavelet decomposition*).
 
 ### Computation of arrival times
