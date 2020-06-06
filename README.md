@@ -16,10 +16,6 @@ pip install PyWavelets
 pip install matplotlib
 ```
 
-If you are using the [Anaconda distribution](https://www.anaconda.com/), you should only need `PyWavelets`, which can be installed in the current environment using the following command in the Anaconda prompt:
-
-```conda install -c conda-forge pywavelets```
-
 ## Sample code
 
 Run `exampleCode.py` for a sample code of the program. This code uses the test signal `exampleData.txt`, an Acoustic Emission waveform from a pencil lead break test (normalized Hsu-Nielsen source) on a 30 x 30 x 0.1 cm CFRP plate recorded at a 5 MHz sample rate. The pencil lead was broken at the center of the plate, and the signal was acquired at a 10 cm distance. Note that the signal file does not have any header; if this was the case, you should look into the [skiprows](https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.loadtxt.html) parameter of the `numpy.loadtxt` function.
@@ -54,6 +50,22 @@ signalFlex = coef[2].T*coef[3].T*coef[4].T*coef[5].T*coef[6].T
 ### Difference with MATLAB's version
 
 It was found that this Python version can lead to slighly different results when compared to the original MATLAB counterpart. This difference is mainly attributed to the wavelet transform implementation, which is somehow different in MATLAB and the PyWavelets library. On the other hand, if the same wavelet coefficient matrix is used, the results are equal in all signals tested.
+
+## Results
+
+The `exampleCode.py` should return the following plots:
+
+- Sample AE signal with the calculated extensional and flexural wave modes.
+
+![alt text](https://i.imgur.com/dJPUtlb.png)
+
+- Signal used for the calculation of the extensional wave mode (310 kHz component)
+
+![alt text](https://i.imgur.com/194yT7Q.png)
+
+- Signal used for the calculation of the flexural wave mode (element wise multiplication of several ‘low-frequency’ components, between 80 to 180 kHz)
+
+![alt text](https://i.imgur.com/q5GiHeh.png)
 
 ## License
 
