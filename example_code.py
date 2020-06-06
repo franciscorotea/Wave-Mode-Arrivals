@@ -37,7 +37,7 @@ flex_arrival_idx = modearrivals.get_flexure_arrival(signal_flex)
 ext_arrival_idx = modearrivals.get_extension_arrival(signal_ext)
 
 flex_arrival_time = flex_arrival_idx/fs*1e6     # in µs
-ext_arrival_time = flex_arrival_idx/fs*1e6      # in µs
+ext_arrival_time = ext_arrival_idx/fs*1e6      # in µs
 
 # Print results.
 
