@@ -49,7 +49,7 @@ signal_flex = coef[2].T*coef[3].T*coef[4].T*coef[5].T*coef[6].T
 
 ### Difference with MATLAB® version
 
-It was found that this Python version can lead to slighly different results when compared to the original MATLAB counterpart. This difference is mainly attributed to the wavelet transform implementation, which is somehow different in MATLAB and the PyWavelets library. On the other hand, if the same wavelet coefficient matrix is used, the results are equal in all signals tested.
+It was found that this Python version can lead to slighly different results when compared to the original MATLAB® counterpart. This difference is mainly attributed to the wavelet transform implementation, which is somehow different in MATLAB® and the PyWavelets library. On the other hand, if the same wavelet coefficient matrix is used, the results are equal in all signals tested.
 
 ## Results
 
