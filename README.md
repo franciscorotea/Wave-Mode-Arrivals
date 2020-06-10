@@ -18,7 +18,7 @@ pip install matplotlib
 
 ## Sample code
 
-Run `exampleCode.py` for a sample code of the program. This code uses the test signal `exampleData.txt`, an Acoustic Emission waveform from a pencil lead break test (normalized Hsu-Nielsen source) on a 30 x 30 x 0.1 cm CFRP plate recorded at a 5 MHz sample rate. The pencil lead was broken at the center of the plate, and the signal was acquired at a 10 cm distance. Note that the signal file does not have any header; if this was the case, you should look into the [skiprows](https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.loadtxt.html) parameter of the `numpy.loadtxt` function.
+Run `example_code.py` for a sample code of the program. This code uses the test signal `example_data.txt`, an Acoustic Emission waveform from a pencil lead break test (normalized Hsu-Nielsen source) on a 30 x 30 x 0.1 cm CFRP plate recorded at a 5 MHz sample rate. The pencil lead was broken at the center of the plate, and the signal was acquired at a 10 cm distance. Note that the signal file does not have any header; if this was the case, you should look into the [skiprows](https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.loadtxt.html) parameter of the `numpy.loadtxt` function.
 
 ### Selection of scale values
 
@@ -53,7 +53,7 @@ It was found that this Python version can lead to slighly different results when
 
 ## Results
 
-The `exampleCode.py` should return the following plots:
+The `example_code.py` should return the following plots:
 
 - Sample AE signal with the calculated extensional and flexural wave modes.
 
