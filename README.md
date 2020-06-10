@@ -1,6 +1,6 @@
 # Identification of the arrival times of extensional and flexural wave modes of ultrasonic signals
 
-This code provides a Python implementation of Gupta's algorithm for the identification of the arrival times of extensional and flexural wave modes using the wavelet decomposition of ultrasonic signals. It is based on Gupta's own version of the algorithm, originally written in MATLAB. A complete explanation of the algorithm can be found in *Gupta, A. and Duke Jr, J. C., Identifying the arrival of extensional and flexural wave modes using wavelet decomposition of ultrasonic signals, Ultrasonics 82, pp. 261-271 (2018).*
+This code provides a Python implementation of Gupta's algorithm for the identification of the arrival times of extensional and flexural wave modes using the wavelet decomposition of ultrasonic signals. It is based on Gupta's own version of the algorithm, originally written in MATLAB®. A complete explanation of the algorithm can be found in *Gupta, A. and Duke Jr, J. C., Identifying the arrival of extensional and flexural wave modes using wavelet decomposition of ultrasonic signals, Ultrasonics 82, pp. 261-271 (2018).*
 
 ## Getting Started
 
@@ -38,13 +38,13 @@ The calculation of the arrival times will be different depending on the mode:
 * Extensional mode: Since the extensional mode always comprises higher frequency components, it is sufficient to use any of these components to detect the arrival of the extensional mode. In this example, the 310 kHz component is used, because of its high amplitude.
 
 ```
-signalExt = coef[9].T  
+signal_ext = coef[9].T  
 ```
 
 * Flexural mode: In this case, the arrival of this mode does not simply coincide with any of the wavelet components. Nevertheless, it was found that the element-wise product of all of the wavelet components identified as ‘lower’ frequencies is useful for the calculation of the flexural mode. In this example, these lower-frequency region is found between 80 and 180 kHz.
 
 ```
-signalFlex = coef[2].T*coef[3].T*coef[4].T*coef[5].T*coef[6].T
+signal_flex = coef[2].T*coef[3].T*coef[4].T*coef[5].T*coef[6].T
 ```
 
 ### Difference with MATLAB's version
