@@ -355,7 +355,7 @@ def get_flexure_arrival(sgnl):
     param = np.abs(pks*prominence)
     nrm = np.sort(param)[::-1]
 
-    # # If there is one single very large peak, then use 2nd highest 
+    # If there is one single very large peak, then use 2nd highest 
     # peak to normalize. Else, use the largest peak.
 
     if nrm[0]/nrm[1] > 5:
